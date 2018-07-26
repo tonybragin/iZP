@@ -47,7 +47,7 @@ class SetViewController: UIViewController {
         }
     }
     @IBAction func lunchAction(_ sender: UITextField) {
-        if let lunch = Double(salaryTextField.text!) {
+        if let lunch = Double(lunchTextField.text!) {
             changeSettingsInCoreDate(key: "lunchTime", value: lunch)
             SETTINGS.lunchTime = lunch
         } else {
