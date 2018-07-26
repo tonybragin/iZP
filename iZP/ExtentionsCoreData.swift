@@ -70,10 +70,7 @@ extension UIViewController {
             let newMonth = NSManagedObject(entity: entity!, insertInto: context)
             
             newMonth.setValue(month, forKey: "month")
-            newMonth.setValue(0, forKey: "earn")
             newMonth.setValue(0, forKey: "prepaid")
-            newMonth.setValue(0, forKey: "dept")
-            newMonth.setValue(0, forKey: "earnBefore15")
             
             saveData(context)
             

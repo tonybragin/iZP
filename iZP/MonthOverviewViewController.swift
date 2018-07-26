@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-@available(iOS 11.0, *)
+@available(iOS 10.0, *)
 class MonthOverviewViewController: UIViewController {
     
     @IBOutlet weak var earnLabel: UILabel!
