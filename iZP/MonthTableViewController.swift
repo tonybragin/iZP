@@ -29,6 +29,10 @@ class MonthTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         loadDays()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        loadDays()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

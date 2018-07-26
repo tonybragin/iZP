@@ -188,20 +188,23 @@ class EditorViewController: UIViewController {
     }
     
     @IBAction func AddAction(_ sender: UIButton) {
-        if dayTextField.text! == "00" {
-            alert(title: "Error", message: "write day")
+        if dayTextField.text! == "" {
+            alert(title: "Error", message: "Write day")
             return
         }
         
-        if canCalculate() {
-            calculations()
-            
-            let context = getContext()
-            saveData(context)
-            
-            self.navigationController?.popViewController(animated: true)
-            
+        if summaryTextField.text! == "" {
+            if canCalculate() {
+                calculations()
+            }
         }
+        
+        let context = getContext()
+        saveData(context)
+        
+        isAdd = true
+        self.navigationController?.popViewController(animated: true)
+        
     }
     
     @IBAction func deleteAction(_ sender: UIButton) {
@@ -259,7 +262,10 @@ class EditorViewController: UIViewController {
     }
     
     func canCalculate() -> Bool {
-        if Int(getOutHoursTextField.text!)! - Int(getInHoursTextField.text!)! >= 0 {
+        guard let hoursIn = Int(getInHoursTextField.text!) else { return false }
+        guard let hoursOut = Int(getOutHoursTextField.text!) else { return false }
+        
+        if hoursIn - hoursOut >= 0 {
             return true
         } else { return false }
     }

@@ -19,6 +19,8 @@ class MonthOverviewViewController: UIViewController {
     
     var month: String!
     var loadedMonth: Month!
+    
+    var earn = 0.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +71,7 @@ class MonthOverviewViewController: UIViewController {
                 self.saveData(context)
                 
                 self.prepaidLabel.text! = "\(prepaid)\(SETTINGS.currency)"
-                self.deptLabel.text! = self.getPrintableDouble(digit: Double(self.earnLabel.text!)! - prepaid) + "\(SETTINGS.currency)"
+                self.deptLabel.text! = self.getPrintableDouble(digit: self.earn - prepaid) + "\(SETTINGS.currency)"
             } else {
                 self.alert(title: "Error", message: "Invalid prepaid")
                 return
@@ -82,7 +84,7 @@ class MonthOverviewViewController: UIViewController {
     func setUpView() {
         loadedMonth = loadMonth(month)
         
-        var earn = 0.0
+        earn = 0.0
         var earnBefore15 = 0.0
         
         for day in loadedMonth.days?.allObjects as! [Day] {
