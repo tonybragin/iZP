@@ -159,7 +159,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UCa-IM-g5L" id="Upu-St-l9z">
-                                    <rect key="frame" x="0.0" y="0.0" width="286" height="60"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="286" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvI-Ho-fzW">
@@ -264,6 +264,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
                                                     <action selector="salaryAction:" destination="soe-fp-tfI" eventType="editingDidEnd" id="EbK-Gp-6MM"/>
+                                                    <action selector="salaryAction:" destination="soe-fp-tfI" eventType="touchUpOutside" id="nnD-Wg-xoy"/>
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salary per hour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0O-Wr-XK1">
@@ -286,6 +287,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
+                                                    <action selector="lunchAction:" destination="soe-fp-tfI" eventType="touchUpOutside" id="e71-Yy-BbY"/>
                                                     <action selector="lunchAction:" destination="soe-fp-tfI" eventType="editingDidEnd" id="eeg-UL-aOr"/>
                                                 </connections>
                                             </textField>
@@ -298,6 +300,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
+                                                    <action selector="correctionAction:" destination="soe-fp-tfI" eventType="touchUpOutside" id="7RC-a4-TVH"/>
                                                     <action selector="correctionAction:" destination="soe-fp-tfI" eventType="editingDidEnd" id="B5b-4b-Sl3"/>
                                                 </connections>
                                             </textField>
@@ -311,6 +314,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
                                                     <action selector="currencyAction:" destination="soe-fp-tfI" eventType="editingDidEnd" id="FcI-dx-8fM"/>
+                                                    <action selector="currencyAction:" destination="soe-fp-tfI" eventType="touchUpOutside" id="sfF-cx-Qyf"/>
                                                 </connections>
                                             </textField>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="54F-i2-7hZ">
@@ -458,6 +462,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="planAction:" destination="NYi-Hi-gAf" eventType="touchUpOutside" id="Uyp-7U-Dvc"/>
                                     <action selector="planAction:" destination="NYi-Hi-gAf" eventType="editingDidEnd" id="XlZ-rb-QZD"/>
                                 </connections>
                             </textField>
@@ -559,8 +564,8 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <action selector="dayAction:" destination="DTy-Jb-dH9" eventType="editingDidEnd" id="wIy-Vv-P0o"/>
-                                                    <action selector="startEditingAction:" destination="DTy-Jb-dH9" eventType="touchUpInside" id="CQc-yz-LO8"/>
+                                                    <action selector="dayAction:" destination="DTy-Jb-dH9" eventType="touchUpOutside" id="Cet-ma-90B"/>
+                                                    <action selector="dayAction:" destination="DTy-Jb-dH9" eventType="editingDidEnd" id="Hzw-V9-2Xp"/>
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3j-YU-Pds">
@@ -591,7 +596,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
                                                     <action selector="getInMinutesAction:" destination="DTy-Jb-dH9" eventType="editingDidEnd" id="GXU-Jg-iwd"/>
-                                                    <action selector="startEditingAction:" destination="DTy-Jb-dH9" eventType="editingDidEnd" id="UwW-mF-cNS"/>
+                                                    <action selector="getInMinutesAction:" destination="DTy-Jb-dH9" eventType="touchUpOutside" id="lLW-qE-vh5"/>
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lWx-No-bIN">
@@ -603,6 +608,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
+                                                    <action selector="getOutMinutesAction:" destination="DTy-Jb-dH9" eventType="touchUpOutside" id="daz-bg-tvw"/>
                                                     <action selector="getOutMinutesAction:" destination="DTy-Jb-dH9" eventType="editingDidEnd" id="zoM-Lq-SPm"/>
                                                 </connections>
                                             </textField>
@@ -624,6 +630,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
+                                                    <action selector="lunchAction:" destination="DTy-Jb-dH9" eventType="touchUpOutside" id="AkN-1h-bbX"/>
                                                     <action selector="lunchAction:" destination="DTy-Jb-dH9" eventType="editingDidEnd" id="Cit-XC-aDd"/>
                                                 </connections>
                                             </textField>
@@ -646,6 +653,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
                                                     <action selector="summaryAction:" destination="DTy-Jb-dH9" eventType="editingDidEnd" id="ZKB-Dt-gc1"/>
+                                                    <action selector="summaryAction:" destination="DTy-Jb-dH9" eventType="touchUpOutside" id="qHB-y3-6Oz"/>
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I41-dB-6Ka">
@@ -690,8 +698,8 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <action selector="getInHoursAction:" destination="DTy-Jb-dH9" eventType="editingDidEnd" id="f4d-uq-ZsZ"/>
-                                                    <action selector="startEditingAction:" destination="DTy-Jb-dH9" eventType="editingDidEnd" id="9OX-aL-S5t"/>
+                                                    <action selector="getInHoursAction:" destination="DTy-Jb-dH9" eventType="touchUpOutside" id="3zm-od-UTo"/>
+                                                    <action selector="getInHoursAction:" destination="DTy-Jb-dH9" eventType="editingDidEnd" id="x3v-ac-hzT"/>
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2UR-da-ebb">
@@ -704,6 +712,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
                                                     <action selector="getOutHoursAction:" destination="DTy-Jb-dH9" eventType="editingDidEnd" id="FNd-4i-NB9"/>
+                                                    <action selector="getOutHoursAction:" destination="DTy-Jb-dH9" eventType="touchUpOutside" id="tAi-I3-8BF"/>
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lY-ER-Bw0">
@@ -984,7 +993,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xvR-Bh-iki" id="qKb-Jc-smb">
-                                    <rect key="frame" x="0.0" y="0.0" width="286" height="60"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="286" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1A-ku-ilp">

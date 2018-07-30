@@ -181,6 +181,11 @@ class EditorViewController: UIViewController {
         getOutMinutesTextField.text! = "00"
         
         if let hours = Double(summaryTextField.text!) {
+            day!.getInHours = 0
+            day!.getInMinutes = 0
+            day!.getOutHours = 0
+            day!.getOutMinutes = 0
+            
             day!.hours = hours
             day!.earn = (hours - day!.lunch) * SETTINGS.salary
             earnLabel.text! = "\(day!.earn)"
@@ -203,7 +208,7 @@ class EditorViewController: UIViewController {
         saveData(context)
         
         isAdd = true
-        self.navigationController?.popViewController(animated: true)
+    self.navigationController?.popViewController(animated: true)
         
     }
     
@@ -215,75 +220,6 @@ class EditorViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    func initDay() {
-        day!.day = "00"
-        day!.getInHours = 0
-        day!.getInMinutes = 0
-        day!.getOutHours = 0
-        day!.getOutMinutes = 0
-        
-        if SETTINGS.lunchBool {
-            day!.lunch = SETTINGS.lunchTime
-        } else {
-            day!.lunch = 0
-        }
-        
-        day!.hours = 0
-        day!.earn = 0
-        day!.thisMonth = month
-    }
-    
-    enum validFor {
-        case days
-        case hours
-        case minutes
-    }
-    
-    func isValid(for type: validFor, digit: Int) -> Bool {
-        switch type {
-        case .days:
-            if digit > 31 || digit < 1 {
-                alert(title: "Error", message: "Invalid day")
-                return false
-            } else { return true }
-            
-        case .hours:
-            if digit > 24 || digit < 0 {
-                alert(title: "Error", message: "Invalid hour")
-                return false
-            } else { return true }
-            
-        case .minutes:
-            if digit > 59 || digit < 0 {
-                alert(title: "Error", message: "Invalid minute")
-                return false
-            } else { return true }
-        }
-    }
-    
-    func canCalculate() -> Bool {
-        guard let hoursIn = Int(getInHoursTextField.text!) else { return false }
-        guard let hoursOut = Int(getOutHoursTextField.text!) else { return false }
-        
-        if hoursIn - hoursOut >= 0 {
-            return true
-        } else { return false }
-    }
-    
-    func calculations() {
-        let hoursIn = Double(getInHoursTextField.text!)!
-        let hoursOut = Double(getOutHoursTextField.text!)!
-        
-        let minIn = Double(getInMinutesTextField.text!)! * (1 / 60)
-        let minOut = Double(getOutMinutesTextField.text!)! * (1 / 60)
-        
-        let summary = hoursOut - hoursIn + minOut - minIn - day!.lunch
-        summaryTextField.text! = "\(summary)"
-        day!.hours = summary
-        
-        day!.earn = summary * SETTINGS.salary
-        earnLabel.text! = "\(day!.earn)\(SETTINGS.currency)"
-    }
     
     /*
     // MARK: - Navigation

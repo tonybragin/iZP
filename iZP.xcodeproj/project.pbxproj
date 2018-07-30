@@ -20,6 +20,9 @@
 		EAC8BC2721006F9700E8F694 /* MonthOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC8BC2621006F9700E8F694 /* MonthOverviewViewController.swift */; };
 		EAC8BC2921006FB000E8F694 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC8BC2821006FB000E8F694 /* EditorViewController.swift */; };
 		EAC8BC3021007FF800E8F694 /* ExtentionsStandart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC8BC2F21007FF800E8F694 /* ExtentionsStandart.swift */; };
+		EAE23066210F5194005834BA /* ExtentionsEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE23065210F5194005834BA /* ExtentionsEditor.swift */; };
+		EAE23069210F5271005834BA /* ExtentionsNext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE23068210F5271005834BA /* ExtentionsNext.swift */; };
+		EAE2306B210F533F005834BA /* ExtentionsSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE2306A210F533F005834BA /* ExtentionsSet.swift */; };
 		EAF4777D1EFA5E5E00189DFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF4777C1EFA5E5E00189DFD /* AppDelegate.swift */; };
 		EAF4777F1EFA5E5E00189DFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF4777E1EFA5E5E00189DFD /* HomeViewController.swift */; };
 		EAF477821EFA5E5E00189DFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAF477801EFA5E5E00189DFD /* Main.storyboard */; };
@@ -40,6 +43,9 @@
 		EAC8BC2621006F9700E8F694 /* MonthOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthOverviewViewController.swift; sourceTree = "<group>"; };
 		EAC8BC2821006FB000E8F694 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		EAC8BC2F21007FF800E8F694 /* ExtentionsStandart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionsStandart.swift; sourceTree = "<group>"; };
+		EAE23065210F5194005834BA /* ExtentionsEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionsEditor.swift; sourceTree = "<group>"; };
+		EAE23068210F5271005834BA /* ExtentionsNext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionsNext.swift; sourceTree = "<group>"; };
+		EAE2306A210F533F005834BA /* ExtentionsSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionsSet.swift; sourceTree = "<group>"; };
 		EAF477791EFA5E5E00189DFD /* iZP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iZP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAF4777C1EFA5E5E00189DFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAF4777E1EFA5E5E00189DFD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +96,18 @@
 			name = TableViews;
 			sourceTree = "<group>";
 		};
+		EAE23067210F51F2005834BA /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				EAC8BC2F21007FF800E8F694 /* ExtentionsStandart.swift */,
+				EA78EA6F2100F1160016BB4B /* ExtentionsCoreData.swift */,
+				EAE23065210F5194005834BA /* ExtentionsEditor.swift */,
+				EAE23068210F5271005834BA /* ExtentionsNext.swift */,
+				EAE2306A210F533F005834BA /* ExtentionsSet.swift */,
+			);
+			name = Extentions;
+			sourceTree = "<group>";
+		};
 		EAF477701EFA5E5E00189DFD = {
 			isa = PBXGroup;
 			children = (
@@ -115,9 +133,8 @@
 				EA78EA712101B79E0016BB4B /* iZP.xcdatamodeld */,
 				EAF477801EFA5E5E00189DFD /* Main.storyboard */,
 				EAF4777C1EFA5E5E00189DFD /* AppDelegate.swift */,
-				EAC8BC2F21007FF800E8F694 /* ExtentionsStandart.swift */,
-				EA78EA6F2100F1160016BB4B /* ExtentionsCoreData.swift */,
 				EA78EA6D2100DF0E0016BB4B /* Settings.swift */,
+				EAE23067210F51F2005834BA /* Extentions */,
 				EAC8BC2A21006FDF00E8F694 /* Views */,
 				EAC8BC2C2100705E00E8F694 /* TableViews */,
 			);
@@ -201,6 +218,8 @@
 				EAC8BC2121006EFE00E8F694 /* MonthTableViewController.swift in Sources */,
 				EA1BE85C1EFCD05400B7B601 /* PrevItemCell.swift in Sources */,
 				EA78EA6E2100DF0E0016BB4B /* Settings.swift in Sources */,
+				EAE2306B210F533F005834BA /* ExtentionsSet.swift in Sources */,
+				EAE23066210F5194005834BA /* ExtentionsEditor.swift in Sources */,
 				EA78EA702100F1160016BB4B /* ExtentionsCoreData.swift in Sources */,
 				EAF4777F1EFA5E5E00189DFD /* HomeViewController.swift in Sources */,
 				EA1BE8531EFC109D00B7B601 /* NextViewController.swift in Sources */,
@@ -212,6 +231,7 @@
 				EAF4777D1EFA5E5E00189DFD /* AppDelegate.swift in Sources */,
 				EA1BE8551EFC131600B7B601 /* SetViewController.swift in Sources */,
 				EA41FBF31EFE684A00583D08 /* MonthItemCell.swift in Sources */,
+				EAE23069210F5271005834BA /* ExtentionsNext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
