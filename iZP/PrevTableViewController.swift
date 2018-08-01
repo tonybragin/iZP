@@ -89,7 +89,7 @@ class PrevTableViewController: UITableViewController {
         
         let request = NSFetchRequest<Month>(entityName: "Month")
         request.returnsObjectsAsFaults = false
-        request.sortDescriptors = [NSSortDescriptor(key: #keyPath(Month.month), ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: #keyPath(Month.month), ascending: false)]
 
         do {
             let result = try context.fetch(request)
