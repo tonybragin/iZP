@@ -67,7 +67,6 @@ class HomeViewController: UIViewController {
         let request = NSFetchRequest<Day>(entityName: "Day")
         request.predicate = NSPredicate(format: "day = %@", getPrintable(digit: day))
         request.returnsObjectsAsFaults = false
-        request.fetchLimit = 1
         
         do {
             let result = try context.fetch(request)
