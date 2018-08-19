@@ -69,7 +69,8 @@ class HomeViewController: UIViewController {
         request.returnsObjectsAsFaults = false
         
         do {
-            let result = try context.fetch(request)
+            var result = try context.fetch(request)
+            result = result.sorted(by: { $0.getInHours < $1.getInHours})
             if let dayObject = result.last {
                 dayObject.getOutHours = Int32(hours)
                 dayObject.getOutMinutes = Int32(min)
