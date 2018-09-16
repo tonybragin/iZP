@@ -76,11 +76,11 @@ extension EditorViewController {
         let minOut = getMinutes(minutes: Double(getOutMinutesTextField.text!))
         
         let summary = hoursOut - hoursIn + minOut - minIn - day!.lunch
-        summaryTextField.text! = getPrintableDouble(digit: summary)
+        summaryTextField.text! = getPrintableDouble(summary)
         day!.hours = summary
         
         day!.earn = summary * SETTINGS.salary
-        earnLabel.text! = getPrintableDouble(digit: day!.earn) + "\(SETTINGS.currency)"
+        earnLabel.text! = getPrintableDouble(day!.earn) + "\(SETTINGS.currency)"
     }
     
     func getMinutes(minutes: Double?) -> Double {

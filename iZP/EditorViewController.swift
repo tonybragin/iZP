@@ -62,15 +62,15 @@ class EditorViewController: UIViewController {
         if day != nil {
             dayTextField.text! = day!.day!
             
-            getInHoursTextField.text! = getPrintable(digit: Int(day!.getInHours))
-            getInMinutesTextField.text! = getPrintable(digit: Int(day!.getInMinutes))
-            getOutHoursTextField.text! = getPrintable(digit: Int(day!.getOutHours))
-            getOutMinutesTextField.text! = getPrintable(digit: Int(day!.getOutMinutes))
+            getInHoursTextField.text! = getPrintable(Int(day!.getInHours))
+            getInMinutesTextField.text! = getPrintable(Int(day!.getInMinutes))
+            getOutHoursTextField.text! = getPrintable(Int(day!.getOutHours))
+            getOutMinutesTextField.text! = getPrintable(Int(day!.getOutMinutes))
             
             lunchTextField.text! = "\(day!.lunch)"
             
-            summaryTextField.text! = getPrintableDouble(digit: day!.hours)
-            earnLabel.text! = getPrintableDouble(digit: day!.earn) + "\(SETTINGS.currency)"
+            summaryTextField.text! = getPrintableDouble(day!.hours)
+            earnLabel.text! = getPrintableDouble(day!.earn) + "\(SETTINGS.currency)"
         } else {
             isNewDay = true
             
@@ -111,7 +111,7 @@ class EditorViewController: UIViewController {
     @IBAction func dayAction(_ sender: UITextField) {
         if let dayDigit = Int(dayTextField.text!) {
             if isValid(for: .days, digit: dayDigit) {
-                day!.day = getPrintable(digit: dayDigit)
+                day!.day = getPrintable(dayDigit)
             }
         } else { alert(title: "Error", message: "Invalid day") }
     }

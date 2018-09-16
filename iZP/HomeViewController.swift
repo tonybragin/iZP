@@ -35,7 +35,7 @@ class HomeViewController: UIViewController {
         
         let dayObject = Day(entity: entity, insertInto: context)
         
-        dayObject.day = getPrintable(digit: day)
+        dayObject.day = getPrintable(day)
         dayObject.getInHours = Int32(hours)
         dayObject.getInMinutes = Int32(min)
         
@@ -56,6 +56,7 @@ class HomeViewController: UIViewController {
         
         alert(title: "Success", message: "You was get in")
     }
+    
     @IBAction func getOutAction(_ sender: UIButton) {
         
         let day = Calendar.current.component(.day, from: Date())
@@ -65,7 +66,7 @@ class HomeViewController: UIViewController {
         let context = getContext()
         
         let request = NSFetchRequest<Day>(entityName: "Day")
-        request.predicate = NSPredicate(format: "day = %@", getPrintable(digit: day))
+        request.predicate = NSPredicate(format: "day = %@", getPrintable(day))
         request.returnsObjectsAsFaults = false
         
         do {
@@ -78,6 +79,8 @@ class HomeViewController: UIViewController {
                 dayObject.hours = Double(dayObject.getOutHours - dayObject.getInHours) + (Double(dayObject.getOutMinutes) * 1/60) - (Double(dayObject.getInMinutes) * 1/60) - dayObject.lunch - SETTINGS.correctionTime
                 
                 dayObject.earn = dayObject.hours * SETTINGS.salary
+                
+                saveData(context)
                 
                 alert(title: "Success", message: "You was get out")
             } else {

@@ -16,6 +16,7 @@ class MonthOverviewViewController: UIViewController {
     @IBOutlet weak var prepaidLabel: UILabel!
     @IBOutlet weak var deptLabel: UILabel!
     @IBOutlet weak var earnBefore15Label: UILabel!
+    @IBOutlet weak var predictionLabel: UILabel!
     
     var month: String!
     var loadedMonth: Month!
@@ -71,7 +72,7 @@ class MonthOverviewViewController: UIViewController {
                 self.saveData(context)
                 
                 self.prepaidLabel.text! = "\(prepaid)\(SETTINGS.currency)"
-                self.deptLabel.text! = self.getPrintableDouble(digit: self.earn - prepaid) + "\(SETTINGS.currency)"
+                self.deptLabel.text! = self.getPrintableDouble(self.earn - prepaid) + "\(SETTINGS.currency)"
             } else {
                 self.alert(title: "Error", message: "Invalid prepaid")
                 return
@@ -82,22 +83,42 @@ class MonthOverviewViewController: UIViewController {
     }
     
     func setUpView() {
-        loadedMonth = loadMonth(month)
+        self.loadedMonth = loadMonth(month)
+        let loadedDays = self.loadedMonth.days?.allObjects as! [Day]
         
-        earn = 0.0
+        self.earn = 0.0
         var earnBefore15 = 0.0
         
-        for day in loadedMonth.days?.allObjects as! [Day] {
-            earn += day.earn
+        for day in loadedDays {
+            self.earn += day.earn
             if Int(day.day!)! <= 15 {
                 earnBefore15 += day.earn
             }
         }
             
-        earnLabel.text! =  getPrintableDouble(digit: earn) + "\(SETTINGS.currency)"
-        prepaidLabel.text! = getPrintableDouble(digit: loadedMonth.prepaid) + "\(SETTINGS.currency)"
-        deptLabel.text! = getPrintableDouble(digit: earn - loadedMonth.prepaid) + "\(SETTINGS.currency)"
-        earnBefore15Label.text! = getPrintableDouble(digit: earnBefore15) + "\(SETTINGS.currency)"
+        self.earnLabel.text! =  getPrintableDouble(earn) + "\(SETTINGS.currency)"
+        self.prepaidLabel.text! = getPrintableDouble(loadedMonth.prepaid) + "\(SETTINGS.currency)"
+        self.deptLabel.text! = getPrintableDouble(earn - loadedMonth.prepaid) + "\(SETTINGS.currency)"
+        self.earnBefore15Label.text! = getPrintableDouble(earnBefore15) + "\(SETTINGS.currency)"
+        self.predictionLabel.text! = getPrintableDouble(predictionCalculate(loadedDays)) + "\(SETTINGS.currency)"
+    }
+    
+    func predictionCalculate(_ days: [Day]) -> Double {
+        var sy = 0.0
+        var sx = 0.0
+        var p = 0.0
+        
+        for day in days {
+            sy += p + day.hours
+            sx += Double(day.day!)!
+            p += day.hours
+        }
+        
+        let k = (sy / Double(days.count)) / (sx / Double(days.count))
+        
+        if k > 0 {
+            return 30 * k * SETTINGS.salary
+        } else { return 0 }
     }
     
     /*

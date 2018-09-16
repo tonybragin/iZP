@@ -938,6 +938,26 @@
                                     <action selector="addHoursAction:" destination="NWG-jx-qcd" eventType="touchUpInside" id="u9f-lF-cHS"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Prediction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIk-O1-DXK">
+                                <rect key="frame" x="16" y="344" width="150" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="5Mh-vY-skF"/>
+                                    <constraint firstAttribute="height" constant="60" id="oQA-Be-Mk7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10000p" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lah-S2-CEj">
+                                <rect key="frame" x="245" y="344" width="59" height="60"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="cRA-3n-iyj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -954,10 +974,13 @@
                             <constraint firstItem="jle-qh-Ndn" firstAttribute="top" secondItem="gef-dt-Txg" secondAttribute="bottom" constant="8" id="Wub-jq-6qa"/>
                             <constraint firstItem="w6S-BC-1mU" firstAttribute="trailing" secondItem="Cdr-f5-mq4" secondAttribute="trailingMargin" id="YMi-b5-efi"/>
                             <constraint firstItem="Te7-9O-FOv" firstAttribute="leading" secondItem="Cdr-f5-mq4" secondAttribute="leadingMargin" id="Zm2-s0-KH9"/>
+                            <constraint firstItem="rIk-O1-DXK" firstAttribute="top" secondItem="WoG-BS-oLQ" secondAttribute="bottom" constant="8" id="cBg-T7-5nQ"/>
                             <constraint firstItem="w6S-BC-1mU" firstAttribute="top" secondItem="v0Z-kR-bsU" secondAttribute="bottom" constant="8" id="dBs-gA-wnw"/>
                             <constraint firstItem="v0Z-kR-bsU" firstAttribute="trailing" secondItem="Cdr-f5-mq4" secondAttribute="trailingMargin" id="dx2-jm-FPX"/>
                             <constraint firstItem="Te7-9O-FOv" firstAttribute="trailing" secondItem="Cdr-f5-mq4" secondAttribute="trailingMargin" id="eCC-em-XnF"/>
+                            <constraint firstItem="lah-S2-CEj" firstAttribute="trailing" secondItem="Cdr-f5-mq4" secondAttribute="trailingMargin" id="fOg-7F-RFi"/>
                             <constraint firstItem="jle-qh-Ndn" firstAttribute="leading" secondItem="Cdr-f5-mq4" secondAttribute="leadingMargin" id="hDa-vt-s9k"/>
+                            <constraint firstItem="lah-S2-CEj" firstAttribute="top" secondItem="fPn-rV-lGs" secondAttribute="bottom" constant="8" id="ibW-W1-lGk"/>
                             <constraint firstItem="5Bv-wN-HSL" firstAttribute="top" secondItem="yzU-KS-fSp" secondAttribute="bottom" constant="8" id="jes-Ph-aTR"/>
                             <constraint firstItem="Te7-9O-FOv" firstAttribute="trailing" secondItem="Cdr-f5-mq4" secondAttribute="trailingMargin" id="nqp-lh-ffx"/>
                             <constraint firstItem="fPn-rV-lGs" firstAttribute="top" secondItem="w6S-BC-1mU" secondAttribute="bottom" constant="8" id="oML-nN-rbz"/>
@@ -965,12 +988,14 @@
                             <constraint firstItem="fPn-rV-lGs" firstAttribute="trailing" secondItem="Cdr-f5-mq4" secondAttribute="trailingMargin" id="rcp-vK-iMC"/>
                             <constraint firstItem="WoG-BS-oLQ" firstAttribute="leading" secondItem="Cdr-f5-mq4" secondAttribute="leadingMargin" id="sAA-bc-ptJ"/>
                             <constraint firstItem="WoG-BS-oLQ" firstAttribute="top" secondItem="jle-qh-Ndn" secondAttribute="bottom" constant="8" id="tXU-q3-fxD"/>
+                            <constraint firstItem="rIk-O1-DXK" firstAttribute="leading" secondItem="Cdr-f5-mq4" secondAttribute="leading" constant="16" id="wCS-Vg-I7F"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="deptLabel" destination="w6S-BC-1mU" id="nqZ-vf-OFn"/>
                         <outlet property="earnBefore15Label" destination="fPn-rV-lGs" id="Ujt-ZQ-BlI"/>
                         <outlet property="earnLabel" destination="LTM-1x-wg1" id="Tj2-qx-660"/>
+                        <outlet property="predictionLabel" destination="lah-S2-CEj" id="qON-IW-SJL"/>
                         <outlet property="prepaidLabel" destination="v0Z-kR-bsU" id="qQa-AO-wY8"/>
                         <segue destination="DTy-Jb-dH9" kind="show" identifier="MonthOverviewToEditor" id="NbW-Kc-TUI"/>
                         <segue destination="Ldd-Ko-cYz" kind="show" identifier="MonthOverviewToMonthTable" id="OmS-6Y-rft"/>
@@ -1077,6 +1102,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="E1k-Ne-l4G"/>
-        <segue reference="JZz-NB-qyN"/>
+        <segue reference="NbW-Kc-TUI"/>
     </inferredMetricsTieBreakers>
 </document>

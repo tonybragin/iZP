@@ -58,9 +58,9 @@ class MonthTableViewController: UITableViewController {
         let day = Days[indexPath.row]
         
         cell.dayLabel.text! = day.day!
-        cell.getInLabel.text! = getPrintable(digit: Int(day.getInHours)) + ":" + getPrintable(digit: Int(day.getInMinutes))
-        cell.getOutLabel.text! = getPrintable(digit: Int(day.getOutHours)) + ":" + getPrintable(digit: Int(day.getOutMinutes))
-        cell.hoursLabel.text! = getPrintableDouble(digit: day.hours)
+        cell.getInLabel.text! = getPrintable(Int(day.getInHours)) + ":" + getPrintable(Int(day.getInMinutes))
+        cell.getOutLabel.text! = getPrintable(Int(day.getOutHours)) + ":" + getPrintable(Int(day.getOutMinutes))
+        cell.hoursLabel.text! = getPrintableDouble(day.hours)
 
         // Configure the cell...
 

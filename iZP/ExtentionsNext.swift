@@ -15,11 +15,11 @@ extension NextViewController {
     
     func planCalculation(_ plan: Double) {
         var calculations = plan / SETTINGS.salary
-        hoursInMonth.text! = getPrintableDouble(digit: calculations)
+        hoursInMonth.text! = getPrintableDouble(calculations)
         calculations /= 4
-        hoursInWeek.text! = getPrintableDouble(digit: calculations)
+        hoursInWeek.text! = getPrintableDouble(calculations)
         calculations /= 5
-        hoursInDay.text! = getPrintableDouble(digit: calculations)
+        hoursInDay.text! = getPrintableDouble(calculations)
     }
     
     func loadPlan() -> Int {

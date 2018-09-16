@@ -40,11 +40,11 @@ extension UIViewController {
         return "\(month).\(year)"
     }
     
-    func getPrintableDouble(digit: Double) -> String {
+    func getPrintableDouble(_ digit: Double) -> String {
         return String(format: "%.2f", digit)
     }
     
-    func getPrintable(digit: Int) -> String {
+    func getPrintable(_ digit: Int) -> String {
         switch digit {
         case 0...9:
             return "0\(digit)"
